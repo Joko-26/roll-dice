@@ -21,16 +21,18 @@ function App() {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div className="container">
       <h1>Würfel</h1>
-      <select options={dice} onChange={(e) => setMax(e.target.value)}>
-        {dice.map((dice) => (
-          <option key={dice.value} value={dice.value}>
-            {dice.label}
-          </option>
-        ))}
-      </select>
-      <button onClick={() => generateNumber()} style={{marginLeft: '10px' }}>Roll</button>
+      <div className="input-group">
+        <select options={dice} onChange={(e) => setMax(e.target.value)}>
+          {dice.map((dice) => (
+            <option key={dice.value} value={dice.value}>
+              {dice.label}
+            </option>
+          ))}
+        </select>
+        <button onClick={() => generateNumber()} style={{marginLeft: '10px' }}>Roll</button>
+      </div>
       <h2>Your Number is: {number}</h2>
     </div>
   );
